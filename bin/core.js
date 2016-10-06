@@ -18,7 +18,7 @@ module.exports = {
                 console.error(err)
                 process.exit(1)
             }
-            let total_nos = files.length
+            var total_nos = files.length
             var relPath_length = (folder.length + 1) //1 for a slash in between
             for (var index in files) {
                 var file = files[index]
@@ -52,7 +52,7 @@ module.exports = {
         })
     },
     decrypt: function(folder, passphrase, outFolder) {
-        let parent_folder = folder.substr(0, folder.lastIndexOf(path.sep))
+        var parent_folder = folder.substr(0, folder.lastIndexOf(path.sep))
         global.cur_done = 0
 
         recursive(folder, function(err, files) {
@@ -64,7 +64,7 @@ module.exports = {
                 console.error(colors.red('"Folder Not valid !"'))
                 process.exit(1)
             }
-            let total_nos = files.length
+            var total_nos = files.length
             var relPath_length = (parent_folder.length + outFolder.length + 1) //1 for a slash in between
 
             global.error = false

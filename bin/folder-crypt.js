@@ -5,7 +5,7 @@ const colors = require('colors')
 const myCore = require('./core')
 
 program
-    .version('0.5.2')
+    .version('0.5.3')
     .usage('-e/-d [-o <dir> [-v]] -p <password> <input_Folder>')
     .option('-e, --encrypt', 'Encrypt a folder')
     .option('-d, --decrypt', 'Decrypt a folder')
