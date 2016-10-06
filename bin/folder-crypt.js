@@ -1,3 +1,7 @@
+#! /usr/bin/env node
+
+'use strict';
+
 const program = require('commander')
 const colors = require('colors')
 const myCore = require('./core')
