@@ -1,13 +1,11 @@
 #! /usr/bin/env node
 
-'use strict';
-
 const program = require('commander')
 const colors = require('colors')
 const myCore = require('./core')
 
 program
-    .version('0.5.0')
+    .version('0.5.1')
     .usage('-e/-d [-o <dir> [-v]] -p <password> <input_Folder>')
     .option('-e, --encrypt', 'Encrypt a folder')
     .option('-d, --decrypt', 'Decrypt a folder')
