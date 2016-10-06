@@ -1,0 +1,27 @@
+{
+  "name": "folder-crypt",
+  "version": "0.0.1",
+  "description": "A Nodejs based folder encryptor and decryptor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prajankya/folder-crypt.git"
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "terminal",
+    "encrypt",
+    "decrypt",
+    "folder"
+  ],
+  "author": "Prajankya <prajankya@gmail.com> (http://prajankya.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prajankya/folder-crypt/issues"
+  },
+  "homepage": "https://github.com/prajankya/folder-crypt#readme"
+}
