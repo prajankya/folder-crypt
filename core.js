@@ -26,13 +26,61 @@ module.exports = {
                     if (err) {
                         console.error(err)
                     }
-                    global.cur_done++
-                        global.g("Done " + global.cur_done + " of " + total_nos)
+                    global.cur_done++;
+                    global.g("Done " + global.cur_done + " of " + total_nos)
                     if (global.cur_done == total_nos) {
                         global.g("Done Completely..")
                         global.g(global.line)
                         global.g("Output folder '" + outFolder + "'")
                         console.log(colors.green('Done Successfully !'))
+                    }
+                })
+            }
+        })
+    },
+    decrypt: function(folder, passphrase, outFolder) {
+        let parent_folder = folder.substr(0, folder.lastIndexOf(path.sep))
+        global.cur_done = 0
+
+        recursive(folder, function(err, files) {
+            if (err) {
+                global.g("Folder Not valid !")
+                if (global.verbose) {
+                    console.error(err)
+                }
+                console.error(colors.red('"Folder Not valid !"'))
+                process.exit(1)
+            }
+            let total_nos = files.length
+            var relPath_length = (parent_folder.length + outFolder.length + 1) //1 for a slash in between
+
+            global.error = false
+
+            for (var index in files) {
+                var file = files[index]
+                var relative_path = file.substr(relPath_length)
+                var outfile = path.join(path.join(parent_folder, outFolder), relative_path)
+                mkdirp.sync(path.dirname(outfile))
+
+                encryptor.decryptFile(file, outfile, passphrase, function(err) {
+                    if (!global.error) {
+                        if (err) {
+                            global.g("Error Decrypting !")
+                            if (global.verbose) {
+                                console.error(err)
+                            }
+                            console.error(colors.red('Error Decrypting ! Wrong Password'))
+                            global.error = true
+                        } else {
+                            global.cur_done++;
+                            global.g("Done " + global.cur_done + " of " + total_nos)
+                            if (global.cur_done == total_nos) {
+                                global.g("Done Completely..")
+                                global.g(global.line)
+                                global.g("Output folder '" + outFolder + "'")
+                                console.log(colors.green('Done Successfully !'))
+                            }
+                        }
                     }
                 })
             }

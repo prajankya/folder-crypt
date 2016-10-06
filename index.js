@@ -62,6 +62,7 @@ if (!program.args) {
 
 var inFolder = program.args[0]
 var passphrase = program.password
+global.verbose = program.verbose
 
 global.g(global.line)
 global.g('Processing Folder : ' + inFolder)
@@ -76,5 +77,5 @@ if (program.encrypt) {
 if (program.decrypt) {
     global.g('Decrypting')
     global.g(global.line)
-
+    myCore.decrypt(inFolder, passphrase, program.out)
 }
