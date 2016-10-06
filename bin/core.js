@@ -8,7 +8,7 @@ const crypto = require('crypto')
 
 module.exports = {
     encrypt: function(folder, passphrase, outFolder) {
-        let parent_folder = folder.substr(0, folder.lastIndexOf(path.sep))
+        var parent_folder = folder.substr(0, folder.lastIndexOf(path.sep))
 
         global.cur_done = 0
 
