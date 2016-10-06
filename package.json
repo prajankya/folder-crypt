@@ -1,6 +1,6 @@
 {
   "name": "folder-crypt",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "description": "A Nodejs based folder encryptor and decryptor",
   "main": "bin/folder-crypt.js",
   "scripts": {
