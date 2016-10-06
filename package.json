@@ -26,6 +26,9 @@
   "homepage": "https://github.com/prajankya/folder-crypt#readme",
   "dependencies": {
     "colors": "^1.1.2",
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "file-encryptor": "^0.1.1",
+    "mkdirp": "^0.5.1",
+    "recursive-readdir": "^2.1.0"
   }
 }
