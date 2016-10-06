@@ -52,6 +52,12 @@ module.exports = {
         })
     },
     decrypt: function(folder, passphrase, outFolder) {
+        try {
+            folder = path.join(path.dirname(fs.realpathSync(folder)), path.basename(folder))
+        } catch (e) {
+            console.error(colors.red('Input Folder invalid'));
+            process.exit(1)
+        }
         var parent_folder = folder.substr(0, folder.lastIndexOf(path.sep))
         global.cur_done = 0
 
